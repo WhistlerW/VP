@@ -11,6 +11,7 @@ import SwiftUI
 enum BtnTabSwitchState {
     case register
     case login
+    case resetPassword
 }
 
 final internal class TabSwitchStateObservedObject: ObservableObject {
@@ -36,11 +37,11 @@ struct TabSwitchView: View {
                         .font (
                             .custom (
                                 "ClanPro-Medium",
-                                size: btnState.tabSwitchState == .login ? 22 : 24
+                                size: btnState.tabSwitchState == .login || btnState.tabSwitchState == .resetPassword ? 22 : 24
                             )
                     )
                         .foregroundColor (
-                            btnState.tabSwitchState == .login
+                            btnState.tabSwitchState == .login || btnState.tabSwitchState == .resetPassword
                                 ? ColorHelper.textLightGray.color() : Color.white
                     )
                 }
@@ -51,11 +52,11 @@ struct TabSwitchView: View {
                         .font (
                             .custom (
                                 "ClanPro-Medium",
-                                size: btnState.tabSwitchState == .login ? 24 : 22
+                                size: btnState.tabSwitchState == .login || btnState.tabSwitchState == .resetPassword  ? 24 : 22
                             )
                     )
                         .foregroundColor (
-                            btnState.tabSwitchState == .login
+                            btnState.tabSwitchState == .login || btnState.tabSwitchState == .resetPassword
                                 ? Color.white : ColorHelper.textLightGray.color()
                     )
                 }

@@ -13,22 +13,27 @@ struct CheckBoxLabelView: View {
     @Binding var isChecked: Bool
     
     var titlLbl: String
+    var hyperLinksTitle: String = ""
+    var hyperLink: URL?
     
     var body: some View {
         HStack(spacing: 15) {
             CheckBox(isChecked: $isChecked)
                 .frame(width:17.5, height: 17.5)
-            
+    
             Button(action: {
-                
+                if let url = self.hyperLink {
+                    UIApplication.shared.open(url)
+                }
             }) {
                 Text(LocalizedStringKey(stringLiteral: titlLbl))
                     .font(.system(size: 11))
                     .foregroundColor(Color.black)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(10)
-                    .accessibility(identifier: "checkLabelDisplay")
-            }
+                +
+                Text(LocalizedStringKey(stringLiteral: hyperLinksTitle))
+                        .font(.system(size: 11))
+                        .foregroundColor(Color.blue)
+            }.accessibility(identifier: "checkLabelDisplay")
         }
         .customCheckBoxFrame()
     }

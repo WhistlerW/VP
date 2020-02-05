@@ -12,9 +12,6 @@ struct RegistrationLoginView: View {
     
     @ObservedObject var btnState: TabSwitchStateObservedObject
     
-    @ObservedObject var loginData = LoginDataItem()
-    @ObservedObject var registerData = RegisterDataItem()
-    
     @State var isFormValid: Bool = false
     
     var body: some View {
@@ -23,9 +20,11 @@ struct RegistrationLoginView: View {
             
             VStack {
                 if btnState.tabSwitchState == .register {
-                    RegisterView(item: registerData)
+                    RegisterView()
                 } else if btnState.tabSwitchState == .login {
-                    LoginView(item: loginData)
+                    LoginView(btnState: btnState)
+                } else if btnState.tabSwitchState == .resetPassword {
+                    ResetPasswordView()
                 }
             }
             .padding(.trailing, 20)

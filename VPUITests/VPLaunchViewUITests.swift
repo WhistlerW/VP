@@ -51,8 +51,8 @@ class VPUITests: XCTestCase {
         
         let findOutMore = app.buttons["findOutMoreDisplay"]
         findOutMore.tap()
-        
-        let findOutMoreDisplay = app.staticTexts["OnboardingView"]
+                
+        let findOutMoreDisplay = app.staticTexts["Welcome to a whole new way to manage your money. Gain a holistic view of your financial life."]
         
         XCTAssertTrue(findOutMoreDisplay.exists)
     }

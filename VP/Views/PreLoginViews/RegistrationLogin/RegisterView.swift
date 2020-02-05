@@ -17,14 +17,14 @@ class RegisterDataItem: ObservableObject {
 }
 
 struct RegisterView: View {
-    @ObservedObject var item: RegisterDataItem
+    @ObservedObject var item: RegisterDataItem = RegisterDataItem()
     
     @State var firstNameValid = FieldChecker()
     @State var lastNameValid = FieldChecker()
     @State var countryValid = FieldChecker()
     @State var emailValid = FieldChecker()
     @State var passwordValid = FieldChecker()
-    @State var isCheckedTearms = false
+    @State var isCheckedTerms = false
     @State var isCheckedPolicy = false
     
     var body: some View {
@@ -36,7 +36,7 @@ struct RegisterView: View {
                     && self.firstNameValid.valid
                     && self.lastNameValid.valid
                     && self.countryValid.valid
-                    && self.isCheckedTearms
+                    && self.isCheckedTerms
                     && self.isCheckedPolicy
         },
             set: { print($0) }
@@ -125,8 +125,10 @@ struct RegisterView: View {
                         .addLineSpacer()
                     
                     CheckBoxLabelView (
-                        isChecked: $isCheckedTearms,
-                        titlLbl: "registration_privacy_policy"
+                        isChecked: $isCheckedTerms,
+                        titlLbl: "registration_terms_conditions_1",
+                        hyperLinksTitle: "lbl_terms_and_conditions",
+                        hyperLink: URL(string: Constants.API.termsAndCondition)
                     )
                     
                     Rectangle()
@@ -134,7 +136,9 @@ struct RegisterView: View {
                     
                     CheckBoxLabelView (
                         isChecked: $isCheckedPolicy,
-                        titlLbl: "registration_privacy_policy"
+                        titlLbl: "registration_privacy_policy",
+                        hyperLinksTitle: "lbl_privacy_policy",
+                        hyperLink: URL(string: Constants.API.privacyPolicy)
                     )
                 }
             }

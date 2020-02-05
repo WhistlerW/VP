@@ -128,7 +128,7 @@ class VPCheckBoxUITests: XCTestCase {
         
         let firstLabel = app.buttons["checkLabelDisplay"].firstMatch.label
         
-        XCTAssertEqual(firstLabel, "I acknowledge that my information will be used in accordance with the ")
+        XCTAssertEqual(firstLabel, "I accept the Terms and conditions")
     }
     
     func testTapOnLabelCheckBox() {
@@ -140,6 +140,7 @@ class VPCheckBoxUITests: XCTestCase {
         
         let firstTextBtn = app.buttons["checkLabelDisplay"].firstMatch
         
+        XCTAssertTrue(firstTextBtn.exists)
     }
 
 

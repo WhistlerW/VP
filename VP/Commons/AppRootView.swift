@@ -17,6 +17,7 @@ enum TypeRootView {
 final internal class RootViewsType: ObservableObject {
     @Published
     var typeRootView: TypeRootView = .launchview
+    var tabState: BtnTabSwitchState = .login
 }
 
 struct AppRootView: View {
@@ -30,7 +31,7 @@ struct AppRootView: View {
             } else if rootViewType.typeRootView == .onboarding {
                 OnboardingView()
             } else if rootViewType.typeRootView == .registrationLogin {
-                RegistrationLoginView(btnState: .init(state: .login))
+                RegistrationLoginView(btnState: .init(state: rootViewType.tabState))
                     .edgesIgnoringSafeArea(.all)
             }
         }

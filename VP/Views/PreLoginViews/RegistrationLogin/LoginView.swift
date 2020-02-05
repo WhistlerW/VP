@@ -16,7 +16,8 @@ class LoginDataItem: ObservableObject {
 
 struct LoginView: View {
     
-    @ObservedObject var item: LoginDataItem
+    @ObservedObject var item: LoginDataItem = LoginDataItem()
+    @ObservedObject var btnState: TabSwitchStateObservedObject
     
     @State var emailValid = FieldChecker()
     @State var passwordValid = FieldChecker()
@@ -63,7 +64,7 @@ struct LoginView: View {
             .cornerRadius(7, corners: [.topRight, .bottomRight])
             
             Button(action: {
-                
+            
             }) {
                 Text("action_next")
                     .font(.custom("ClanPro-Medium", size: 14))
@@ -73,7 +74,7 @@ struct LoginView: View {
             
             VStack {
                 Button(action: {
-                    
+                    self.btnState.tabSwitchState = .resetPassword
                 }) {
                     Text("login_forgot_password")
                         .foregroundColor(Color.white)
@@ -109,7 +110,7 @@ struct LoginView: View {
 #if DEBUG
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(item: LoginDataItem())
+        LoginView(btnState: TabSwitchStateObservedObject(state: .login))
     }
 }
 #endif

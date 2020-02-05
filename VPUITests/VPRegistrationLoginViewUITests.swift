@@ -43,7 +43,10 @@ class VPRegistrationLoginViewUITests: XCTestCase {
         
         app.buttons["LOG IN"].tap()
         
-        let forgotPass = app.buttons["Forgot password"]
+        let forgotPass = app.buttons["Forgot password?"]
+        forgotPass.tap()
+        
+        XCTAssertTrue(app.staticTexts["Please enter your email address so we can reset your password."].exists)
     }
     
     func testGoogleBtnTap() {

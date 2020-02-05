@@ -14,4 +14,9 @@ struct Constants {
         public static let PasswordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+.!=*_])(?=\\S+$).{8,32}$"
         public static let EmptyRegex = "^$"
     }
+    
+    struct API {
+        public static let termsAndCondition = "http://www.mojskrbnik.com/terms-and-conditions"
+        public static let privacyPolicy = "http://www.mojskrbnik.com/privacypolicy"
+    }
 }

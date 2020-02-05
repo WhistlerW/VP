@@ -206,7 +206,7 @@
 "registration_success_msgs"="Uporabnik registriran!";
 "registration_go_to_login"="Pojdite na prijavo";
 "login_forgot_password"="Pozabljeno geslo?";
-"login_forgot_password_reset_password"="Ponastavite geslo";
+"login_forgot_password_reset_password"="PONASTAVITE GESLO";
 "login_forgot_password_text"="Vnesite e-naslov, da lahko ponastavimo geslo.";
 "pin_required_msg_part1"="Morate";
 "pin_required_msg_part2"="za nadaljevanje!";

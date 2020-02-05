@@ -27,6 +27,7 @@
 		F41A280A23BA35A50014D9D3 /* VPRegistrationLoginViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41A280923BA35A50014D9D3 /* VPRegistrationLoginViewUITests.swift */; };
 		F429B1E523C477DE00536C01 /* CheckBoxLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F429B1E423C477DE00536C01 /* CheckBoxLabelView.swift */; };
 		F429B1E923C47C1B00536C01 /* VPCheckBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F429B1E823C47C1B00536C01 /* VPCheckBoxUITests.swift */; };
+		F43F5A8D23CF368100E993A4 /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43F5A8C23CF368100E993A4 /* PagingView.swift */; };
 		F44D893C239117B000DFD09F /* ClanPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F44D8934239117B000DFD09F /* ClanPro-Medium.otf */; };
 		F44D893D239117B000DFD09F /* ClanPro-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F44D8935239117B000DFD09F /* ClanPro-MediumItalic.otf */; };
 		F44D893E239117B000DFD09F /* ClanPro-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F44D8936239117B000DFD09F /* ClanPro-BookItalic.otf */; };
@@ -37,6 +38,9 @@
 		F44D8943239117B000DFD09F /* ClanPro-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F44D893B239117B000DFD09F /* ClanPro-BoldItalic.otf */; };
 		F46307CA23B23F5600B850B2 /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46307C923B23F5600B850B2 /* FieldValidator.swift */; };
 		F4772C1D23CC9C320088E9D8 /* PickerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4772C1C23CC9C320088E9D8 /* PickerListView.swift */; };
+		F4799CD223EAEF73006BC5C4 /* VPOnboardingViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4799CD123EAEF73006BC5C4 /* VPOnboardingViewUITests.swift */; };
+		F4799CD423EB025F006BC5C4 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4799CD323EB025F006BC5C4 /* ResetPasswordView.swift */; };
+		F4799CD623EB0DB5006BC5C4 /* VPResetPasswordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4799CD523EB0DB5006BC5C4 /* VPResetPasswordUITests.swift */; };
 		F47CEBAD23BF2E9C00E9E5B8 /* VPLoginViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CEBAC23BF2E9C00E9E5B8 /* VPLoginViewUITests.swift */; };
 		F47CEBAF23BF303D00E9E5B8 /* VPRoundedCornerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CEBAE23BF303D00E9E5B8 /* VPRoundedCornerTests.swift */; };
 		F47CEBB123BF37A300E9E5B8 /* VPFieldValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47CEBB023BF37A300E9E5B8 /* VPFieldValidatorTest.swift */; };
@@ -104,6 +108,7 @@
 		F41A280923BA35A50014D9D3 /* VPRegistrationLoginViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPRegistrationLoginViewUITests.swift; sourceTree = "<group>"; };
 		F429B1E423C477DE00536C01 /* CheckBoxLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxLabelView.swift; sourceTree = "<group>"; };
 		F429B1E823C47C1B00536C01 /* VPCheckBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPCheckBoxUITests.swift; sourceTree = "<group>"; };
+		F43F5A8C23CF368100E993A4 /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
 		F44D8934239117B000DFD09F /* ClanPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClanPro-Medium.otf"; sourceTree = "<group>"; };
 		F44D8935239117B000DFD09F /* ClanPro-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClanPro-MediumItalic.otf"; sourceTree = "<group>"; };
 		F44D8936239117B000DFD09F /* ClanPro-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClanPro-BookItalic.otf"; sourceTree = "<group>"; };
@@ -115,6 +120,9 @@
 		F46307C923B23F5600B850B2 /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
 		F4772C1723CC916E0088E9D8 /* VP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VP.entitlements; sourceTree = "<group>"; };
 		F4772C1C23CC9C320088E9D8 /* PickerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerListView.swift; sourceTree = "<group>"; };
+		F4799CD123EAEF73006BC5C4 /* VPOnboardingViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPOnboardingViewUITests.swift; sourceTree = "<group>"; };
+		F4799CD323EB025F006BC5C4 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		F4799CD523EB0DB5006BC5C4 /* VPResetPasswordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPResetPasswordUITests.swift; sourceTree = "<group>"; };
 		F47CEBAC23BF2E9C00E9E5B8 /* VPLoginViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPLoginViewUITests.swift; sourceTree = "<group>"; };
 		F47CEBAE23BF303D00E9E5B8 /* VPRoundedCornerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPRoundedCornerTests.swift; sourceTree = "<group>"; };
 		F47CEBB023BF37A300E9E5B8 /* VPFieldValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPFieldValidatorTest.swift; sourceTree = "<group>"; };
@@ -230,7 +238,9 @@
 				F47CEBB223BF7B0600E9E5B8 /* VPRegisterViewUITest.swift */,
 				F429B1E823C47C1B00536C01 /* VPCheckBoxUITests.swift */,
 				F482A7C023CDD5A300D8F678 /* VPPickerListViewUITests.swift */,
+				F4799CD123EAEF73006BC5C4 /* VPOnboardingViewUITests.swift */,
 				F40ABDBD238FC1B60099E36A /* Info.plist */,
+				F4799CD523EB0DB5006BC5C4 /* VPResetPasswordUITests.swift */,
 			);
 			path = VPUITests;
 			sourceTree = "<group>";
@@ -293,6 +303,7 @@
 				F4A3654923C32BD800E498CC /* CheckBox.swift */,
 				F429B1E423C477DE00536C01 /* CheckBoxLabelView.swift */,
 				F4772C1C23CC9C320088E9D8 /* PickerListView.swift */,
+				F43F5A8C23CF368100E993A4 /* PagingView.swift */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -361,6 +372,7 @@
 				F49DB72B2396979600AB0AFD /* RegistrationLoginView.swift */,
 				F499613123954D96009BA613 /* LoginView.swift */,
 				F49DB7272396882A00AB0AFD /* RegisterView.swift */,
+				F4799CD323EB025F006BC5C4 /* ResetPasswordView.swift */,
 				F41A27EE23BA1CC70014D9D3 /* TabSwitchView.swift */,
 			);
 			path = RegistrationLogin;
@@ -531,7 +543,9 @@
 				F40ABDDA238FF0130099E36A /* VideoView.swift in Sources */,
 				F499613223954D96009BA613 /* LoginView.swift in Sources */,
 				F40ABDD8238FDD6C0099E36A /* Constants.swift in Sources */,
+				F4799CD423EB025F006BC5C4 /* ResetPasswordView.swift in Sources */,
 				F49961382395672F009BA613 /* OnboardingView.swift in Sources */,
+				F43F5A8D23CF368100E993A4 /* PagingView.swift in Sources */,
 				F482A7B923CDAC3500D8F678 /* JsonFileReader.swift in Sources */,
 				F4A3654A23C32BD800E498CC /* CheckBox.swift in Sources */,
 				F4E930F823B381D100CA9644 /* FloatingLabelTextField.swift in Sources */,
@@ -576,8 +590,10 @@
 				F429B1E923C47C1B00536C01 /* VPCheckBoxUITests.swift in Sources */,
 				F482A7C123CDD5A300D8F678 /* VPPickerListViewUITests.swift in Sources */,
 				F47CEBB323BF7B0600E9E5B8 /* VPRegisterViewUITest.swift in Sources */,
+				F4799CD623EB0DB5006BC5C4 /* VPResetPasswordUITests.swift in Sources */,
 				F41A280A23BA35A50014D9D3 /* VPRegistrationLoginViewUITests.swift in Sources */,
 				F47CEBAD23BF2E9C00E9E5B8 /* VPLoginViewUITests.swift in Sources */,
+				F4799CD223EAEF73006BC5C4 /* VPOnboardingViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
