@@ -18,6 +18,7 @@ class RegisterDataItem: ObservableObject {
 
 struct RegisterView: View {
     @ObservedObject var item: RegisterDataItem = RegisterDataItem()
+    @ObservedObject var loginRegistrationState: RegistrationLoginStateObservedObject
     
     @State var firstNameValid = FieldChecker()
     @State var lastNameValid = FieldChecker()
@@ -147,7 +148,7 @@ struct RegisterView: View {
             
             if validation.wrappedValue {
                 Button(action: {
-                    
+                    self.loginRegistrationState.state = .dashboard
                 }) {
                     Text("action_next")
                         .font(.custom("ClanPro-Medium", size: 14))
@@ -186,7 +187,7 @@ struct RegisterView: View {
 #if DEBUG
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(item: RegisterDataItem())
+        RegisterView(loginRegistrationState: RegistrationLoginStateObservedObject(state: .register))
     }
 }
 #endif

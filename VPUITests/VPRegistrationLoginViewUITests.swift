@@ -29,12 +29,17 @@ class VPRegistrationLoginViewUITests: XCTestCase {
         let btnRegister = app.buttons["Register"]
         btnRegister.tap()
         
+        XCTAssertFalse(app.buttons["Forgot password?"].exists)
+        
         let btnLogin  = app.buttons["Log in"]
         btnLogin.tap()
         
-        XCTAssertTrue(app.buttons["facebookBtn"].exists)
-        XCTAssertTrue(app.buttons["googleBtn"].exists)
+        XCTAssertTrue(app.buttons["Forgot password?"].exists)
         
+        let btnForgotPassword = app.buttons["Forgot password?"]
+        btnForgotPassword.tap()
+        
+        XCTAssertFalse(app.buttons["Forgot password?"].exists)
     }
     
     func testForgotBtnTap() {

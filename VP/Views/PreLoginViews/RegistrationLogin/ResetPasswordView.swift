@@ -12,11 +12,10 @@ class ResetPasswordItem: ObservableObject {
     @Published var email: String = ""
 }
 
-
 struct ResetPasswordView: View {
     
     @ObservedObject var item: ResetPasswordItem = ResetPasswordItem()
-    
+    @ObservedObject var loginRegistrationState: RegistrationLoginStateObservedObject
     @State var emailValid = FieldChecker()
     
     var body: some View {
@@ -65,7 +64,7 @@ struct ResetPasswordView: View {
 #if DEBUG
 struct ResetPasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        ResetPasswordView()
+        ResetPasswordView(loginRegistrationState: RegistrationLoginStateObservedObject(state: .resetPassword))
     }
 }
 #endif

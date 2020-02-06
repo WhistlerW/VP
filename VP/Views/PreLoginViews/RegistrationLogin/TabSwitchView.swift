@@ -8,57 +8,44 @@
 
 import SwiftUI
 
-enum BtnTabSwitchState {
-    case register
-    case login
-    case resetPassword
-}
-
-final internal class TabSwitchStateObservedObject: ObservableObject {
-    @Published
-    var tabSwitchState: BtnTabSwitchState
-    
-    init(state: BtnTabSwitchState) {
-        self.tabSwitchState = state
-    }
-}
-
 struct TabSwitchView: View {
     
-    @ObservedObject var btnState: TabSwitchStateObservedObject
+    @ObservedObject var btnState: RegistrationLoginStateObservedObject
     
     var body: some View {
         VStack {
             HStack {
-                Button(action: {
-                    self.btnState.tabSwitchState = .register
-                }) {
-                    Text("action_sign_up")
-                        .font (
-                            .custom (
-                                "ClanPro-Medium",
-                                size: btnState.tabSwitchState == .login || btnState.tabSwitchState == .resetPassword ? 22 : 24
-                            )
-                    )
-                        .foregroundColor (
-                            btnState.tabSwitchState == .login || btnState.tabSwitchState == .resetPassword
-                                ? ColorHelper.textLightGray.color() : Color.white
-                    )
-                }
-                Button(action: {
-                    self.btnState.tabSwitchState = .login
-                }) {
-                    Text("action_sign_in")
-                        .font (
-                            .custom (
-                                "ClanPro-Medium",
-                                size: btnState.tabSwitchState == .login || btnState.tabSwitchState == .resetPassword  ? 24 : 22
-                            )
-                    )
-                        .foregroundColor (
-                            btnState.tabSwitchState == .login || btnState.tabSwitchState == .resetPassword
-                                ? Color.white : ColorHelper.textLightGray.color()
-                    )
+                if btnState.state != .dashboard {
+                    Button(action: {
+                        self.btnState.state = .register
+                    }) {
+                        Text("action_sign_up")
+                            .font (
+                                .custom (
+                                    "ClanPro-Medium",
+                                    size: btnState.state == .login || btnState.state == .resetPassword ? 22 : 24
+                                )
+                        )
+                            .foregroundColor (
+                                btnState.state == .login || btnState.state == .resetPassword
+                                    ? ColorHelper.textLightGray.color() : Color.white
+                        )
+                    }
+                    Button(action: {
+                        self.btnState.state = .login
+                    }) {
+                        Text("action_sign_in")
+                            .font (
+                                .custom (
+                                    "ClanPro-Medium",
+                                    size: btnState.state == .login || btnState.state == .resetPassword  ? 24 : 22
+                                )
+                        )
+                            .foregroundColor (
+                                btnState.state == .login || btnState.state == .resetPassword
+                                    ? Color.white : ColorHelper.textLightGray.color()
+                        )
+                    }
                 }
                 Spacer()
             }

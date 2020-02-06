@@ -17,7 +17,7 @@ class LoginDataItem: ObservableObject {
 struct LoginView: View {
     
     @ObservedObject var item: LoginDataItem = LoginDataItem()
-    @ObservedObject var btnState: TabSwitchStateObservedObject
+    @ObservedObject var loginRegistrationState: RegistrationLoginStateObservedObject
     
     @State var emailValid = FieldChecker()
     @State var passwordValid = FieldChecker()
@@ -74,7 +74,7 @@ struct LoginView: View {
             
             VStack {
                 Button(action: {
-                    self.btnState.tabSwitchState = .resetPassword
+                    self.loginRegistrationState.state = .resetPassword
                 }) {
                     Text("login_forgot_password")
                         .foregroundColor(Color.white)
@@ -100,7 +100,6 @@ struct LoginView: View {
                     .accessibility(identifier: "googleBtn")
                 }
                 
-              //  ASAuthorizationAppleIDButton()
             }.padding(.top, 20)
         }
     }
@@ -110,7 +109,7 @@ struct LoginView: View {
 #if DEBUG
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(btnState: TabSwitchStateObservedObject(state: .login))
+        LoginView(loginRegistrationState: RegistrationLoginStateObservedObject(state: .login))
     }
 }
 #endif

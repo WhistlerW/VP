@@ -61,6 +61,7 @@
 		F4E930F523B3636C00CA9644 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E930F423B3636C00CA9644 /* RoundedCorner.swift */; };
 		F4E930F823B381D100CA9644 /* FloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E930F723B381D100CA9644 /* FloatingLabelTextField.swift */; };
 		F4F36F7223B4B28D002BEC7D /* CustomModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F36F7123B4B28D002BEC7D /* CustomModifier.swift */; };
+		F4FA670C23EC056800749ADF /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA670B23EC056800749ADF /* DashBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		F4E930F423B3636C00CA9644 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		F4E930F723B381D100CA9644 /* FloatingLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabelTextField.swift; sourceTree = "<group>"; };
 		F4F36F7123B4B28D002BEC7D /* CustomModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifier.swift; sourceTree = "<group>"; };
+		F4FA670B23EC056800749ADF /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,8 +241,8 @@
 				F429B1E823C47C1B00536C01 /* VPCheckBoxUITests.swift */,
 				F482A7C023CDD5A300D8F678 /* VPPickerListViewUITests.swift */,
 				F4799CD123EAEF73006BC5C4 /* VPOnboardingViewUITests.swift */,
-				F40ABDBD238FC1B60099E36A /* Info.plist */,
 				F4799CD523EB0DB5006BC5C4 /* VPResetPasswordUITests.swift */,
+				F40ABDBD238FC1B60099E36A /* Info.plist */,
 			);
 			path = VPUITests;
 			sourceTree = "<group>";
@@ -374,6 +376,7 @@
 				F49DB7272396882A00AB0AFD /* RegisterView.swift */,
 				F4799CD323EB025F006BC5C4 /* ResetPasswordView.swift */,
 				F41A27EE23BA1CC70014D9D3 /* TabSwitchView.swift */,
+				F4FA670B23EC056800749ADF /* DashBoardView.swift */,
 			);
 			path = RegistrationLogin;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				F41A27EF23BA1CC70014D9D3 /* TabSwitchView.swift in Sources */,
 				F40ABD9C238FC1B50099E36A /* SceneDelegate.swift in Sources */,
 				F49DB72C2396979600AB0AFD /* RegistrationLoginView.swift in Sources */,
+				F4FA670C23EC056800749ADF /* DashBoardView.swift in Sources */,
 				F40ABDD2238FD0350099E36A /* ColorHelper.swift in Sources */,
 				F4E930F523B3636C00CA9644 /* RoundedCorner.swift in Sources */,
 				F41A27ED23BA132E0014D9D3 /* ButtonModifier.swift in Sources */,

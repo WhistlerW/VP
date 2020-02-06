@@ -204,7 +204,7 @@
 "registration_sign_up_success"="Prijava uspešna!";
 "registration_check_email"="Na vašem e-naslovu vas čaka potrditveni link sledite navodilom in se ponovno prijavite.";
 "registration_success_msgs"="Uporabnik registriran!";
-"registration_go_to_login"="Pojdite na prijavo";
+"registration_go_to_login"="POJDITE NA PRIJAVO";
 "login_forgot_password"="Pozabljeno geslo?";
 "login_forgot_password_reset_password"="PONASTAVITE GESLO";
 "login_forgot_password_text"="Vnesite e-naslov, da lahko ponastavimo geslo.";
