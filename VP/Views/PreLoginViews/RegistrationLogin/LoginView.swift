@@ -9,18 +9,48 @@
 import SwiftUI
 import AuthenticationServices
 
-class LoginDataItem: ObservableObject {
+class LoginDataItem: ObservableObject, PNetworkManagerRequestParser {
     @Published var email: String = ""
     @Published var password: String = ""
+    
+    var headers: HTTPHeaders? {
+        return [
+            "Authorization": "Basic \(Constants.Authorization.basicAuthorization)"
+        ]
+    }
+    
+    var params: Parameters? {
+        return [
+            "grant_type": "password",
+            "username": email,
+            "password": password
+        ]
+    }
+    
+    var isParameterEncoded: Bool {
+        return true
+    }
 }
+
+struct LoginResponse: Codable {
+    var access_token: String
+    var token_type: String
+    var refresh_token: String
+    var expires_in: UInt64
+    var user_id: String
+    var two_fa_enabled: Bool
+ }
 
 struct LoginView: View {
     
     @ObservedObject var item: LoginDataItem = LoginDataItem()
     @ObservedObject var loginRegistrationState: RegistrationLoginStateObservedObject
     
-    @State var emailValid = FieldChecker()
-    @State var passwordValid = FieldChecker()
+    @State private var emailValid = FieldChecker()
+    @State private var passwordValid = FieldChecker()
+    
+    @State private var showingMessage = false
+    @State private var error = ErrorMessage()
     
     var body: some View {
         
@@ -64,7 +94,21 @@ struct LoginView: View {
             .cornerRadius(7, corners: [.topRight, .bottomRight])
             
             Button(action: {
-            
+                NetworkManager().request(
+                    url: Constants.API.login,
+                    inputData: self.item.self ,
+                    method: .post, success: { (model: LoginResponse?) in
+                        if let model = model {
+                            DispatchQueue.main.async {
+                                print(model)
+                            }
+                        }
+                }, error: { error in
+                    if let err = error {
+                        self.error = err
+                        self.showingMessage = true
+                    }
+                })
             }) {
                 Text("action_next")
                     .font(.custom("ClanPro-Medium", size: 14))
@@ -101,6 +145,13 @@ struct LoginView: View {
                 }
                 
             }.padding(.top, 20)
+        }
+        .alert(isPresented: self.$showingMessage) { () -> Alert in
+            Alert(
+                title: Text(LocalizedStringKey(stringLiteral: error.title)),
+                message: Text(LocalizedStringKey(stringLiteral: error.message)),
+                dismissButton: .default(Text(LocalizedStringKey(stringLiteral: "lbl_ok")))
+            )
         }
     }
     

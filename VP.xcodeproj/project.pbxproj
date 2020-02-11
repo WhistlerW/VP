@@ -37,6 +37,7 @@
 		F44D8942239117B000DFD09F /* ClanPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F44D893A239117B000DFD09F /* ClanPro-Book.otf */; };
 		F44D8943239117B000DFD09F /* ClanPro-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F44D893B239117B000DFD09F /* ClanPro-BoldItalic.otf */; };
 		F46307CA23B23F5600B850B2 /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46307C923B23F5600B850B2 /* FieldValidator.swift */; };
+		F4643C6823ED583100B4D1AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4643C6723ED583100B4D1AB /* NetworkManager.swift */; };
 		F4772C1D23CC9C320088E9D8 /* PickerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4772C1C23CC9C320088E9D8 /* PickerListView.swift */; };
 		F4799CD223EAEF73006BC5C4 /* VPOnboardingViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4799CD123EAEF73006BC5C4 /* VPOnboardingViewUITests.swift */; };
 		F4799CD423EB025F006BC5C4 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4799CD323EB025F006BC5C4 /* ResetPasswordView.swift */; };
@@ -119,6 +120,7 @@
 		F44D893A239117B000DFD09F /* ClanPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClanPro-Book.otf"; sourceTree = "<group>"; };
 		F44D893B239117B000DFD09F /* ClanPro-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClanPro-BoldItalic.otf"; sourceTree = "<group>"; };
 		F46307C923B23F5600B850B2 /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
+		F4643C6723ED583100B4D1AB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F4772C1723CC916E0088E9D8 /* VP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VP.entitlements; sourceTree = "<group>"; };
 		F4772C1C23CC9C320088E9D8 /* PickerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerListView.swift; sourceTree = "<group>"; };
 		F4799CD123EAEF73006BC5C4 /* VPOnboardingViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPOnboardingViewUITests.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				F4F36F7023B4B238002BEC7D /* Modifiers */,
 				F482A7BA23CDAC7800D8F678 /* Views */,
 				F482A7BB23CDAC8F00D8F678 /* Models */,
+				F4643C6623ED580400B4D1AB /* NetworkManager */,
 				F40ABDCA238FCB190099E36A /* SupportingFiles */,
 				F40ABDD0238FD0170099E36A /* Uility */,
 				F40ABDA7238FC1B60099E36A /* Info.plist */,
@@ -333,6 +336,14 @@
 				F482A7B823CDAC3500D8F678 /* JsonFileReader.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F4643C6623ED580400B4D1AB /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				F4643C6723ED583100B4D1AB /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		F482A7BA23CDAC7800D8F678 /* Views */ = {
@@ -557,6 +568,7 @@
 				F4996135239559FE009BA613 /* AppRootView.swift in Sources */,
 				F4E930F323B362CB00CA9644 /* View+Custom.swift in Sources */,
 				F40ABD9A238FC1B50099E36A /* AppDelegate.swift in Sources */,
+				F4643C6823ED583100B4D1AB /* NetworkManager.swift in Sources */,
 				F41A27EF23BA1CC70014D9D3 /* TabSwitchView.swift in Sources */,
 				F40ABD9C238FC1B50099E36A /* SceneDelegate.swift in Sources */,
 				F49DB72C2396979600AB0AFD /* RegistrationLoginView.swift in Sources */,

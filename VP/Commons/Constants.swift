@@ -16,7 +16,13 @@ struct Constants {
     }
     
     struct API {
+        public static let baseURL = "https://api.mojskrbnik.com"
         public static let termsAndCondition = "http://www.mojskrbnik.com/terms-and-conditions"
         public static let privacyPolicy = "http://www.mojskrbnik.com/privacypolicy"
+        public static let login = baseURL + "/user-service/oauth/token?platform=mobile"
+    }
+    
+    struct Authorization {
+        public static let basicAuthorization = "TVJXZWJDbGllbnRJZDpYWTdrbXpvTnpsMTAw"
     }
 }
