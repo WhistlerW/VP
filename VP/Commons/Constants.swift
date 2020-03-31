@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 struct Constants {
     struct Validation {
@@ -25,4 +26,5 @@ struct Constants {
     struct Authorization {
         public static let basicAuthorization = "TVJXZWJDbGllbnRJZDpYWTdrbXpvTnpsMTAw"
     }
+
 }

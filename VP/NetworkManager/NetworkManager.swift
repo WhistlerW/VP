@@ -58,12 +58,31 @@ enum ErrorHandler {
         }
     }
 }
+// Protocol for MOCK/Real
+protocol URLSessionProtocol {
+    typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
+    
+    func dataTask(with request: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
+}
+
+protocol URLSessionDataTaskProtocol {
+    func resume()
+}
+
+//MARK: Conform the protocol
+extension URLSession: URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping URLSessionProtocol.DataTaskResult) -> URLSessionDataTaskProtocol {
+        return dataTask(with: request, completionHandler: completionHandler) as URLSessionDataTask
+    }
+}
+
+extension URLSessionDataTask: URLSessionDataTaskProtocol {}
 
 class NetworkManager {
     
-    private let session: URLSession
+    private let session: URLSessionProtocol
     
-    init(session: URLSession = .shared) {
+    init(session: URLSessionProtocol = URLSession.shared) {
         self.session = session
     }
     
@@ -77,7 +96,7 @@ class NetworkManager {
     ) {
         
         guard let url = URL(string: url) else {
-            error(nil)
+            error(ErrorHandler.unknown(nil).message)
             return
         }
         
@@ -144,7 +163,7 @@ protocol PNetworkManagerRequestParser {
 }
 
 extension PNetworkManagerRequestParser {
-    var isParameterEncodeds: Bool {
+    var isParameterEncoded: Bool {
         return false
     }
 }

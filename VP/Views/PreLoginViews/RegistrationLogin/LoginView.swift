@@ -33,12 +33,12 @@ class LoginDataItem: ObservableObject, PNetworkManagerRequestParser {
 }
 
 struct LoginResponse: Codable {
-    var access_token: String
-    var token_type: String
-    var refresh_token: String
-    var expires_in: UInt64
-    var user_id: String
-    var two_fa_enabled: Bool
+    var access_token: String = ""
+    var token_type: String = ""
+    var refresh_token: String = ""
+    var expires_in: UInt64 = 0
+    var user_id: String = ""
+    var two_fa_enabled: Bool = false
  }
 
 struct LoginView: View {
@@ -49,8 +49,29 @@ struct LoginView: View {
     @State private var emailValid = FieldChecker()
     @State private var passwordValid = FieldChecker()
     
-    @State private var showingMessage = false
-    @State private var error = ErrorMessage()
+    @State  var showingMessage = false
+    @State  var error = ErrorMessage()
+    
+    @State var loginResponse = LoginResponse()
+    
+    var networkManager = NetworkManager()
+    let inspection = Inspection<Self>()
+    
+    func callService() {
+        self.networkManager.request(
+            url: Constants.API.login,
+            inputData: self.item.self ,
+            method: .post, success: { (model: LoginResponse?) in
+                if let md = model {
+                    self.loginResponse = md
+                }
+        }, error: { error in
+            if let err = error {
+                self.error = err
+                self.showingMessage = true
+            }
+        })
+    }
     
     var body: some View {
         
@@ -94,21 +115,7 @@ struct LoginView: View {
             .cornerRadius(7, corners: [.topRight, .bottomRight])
             
             Button(action: {
-                NetworkManager().request(
-                    url: Constants.API.login,
-                    inputData: self.item.self ,
-                    method: .post, success: { (model: LoginResponse?) in
-                        if let model = model {
-                            DispatchQueue.main.async {
-                                print(model)
-                            }
-                        }
-                }, error: { error in
-                    if let err = error {
-                        self.error = err
-                        self.showingMessage = true
-                    }
-                })
+                self.callService()
             }) {
                 Text("action_next")
                     .font(.custom("ClanPro-Medium", size: 14))
@@ -126,7 +133,7 @@ struct LoginView: View {
                 
                 HStack(spacing: 20) {
                     Button(action: {
-                        
+                        print("button1")
                     }) {
                         Image("fbBtn")
                             .resizable()
@@ -135,7 +142,7 @@ struct LoginView: View {
                     .accessibility(identifier: "facebookBtn")
                     
                     Button(action: {
-                        
+                        print("button2")
                     }) {
                         Image("googleBtn")
                             .resizable()
@@ -153,6 +160,7 @@ struct LoginView: View {
                 dismissButton: .default(Text(LocalizedStringKey(stringLiteral: "lbl_ok")))
             )
         }
+        .onReceive(inspection.notice) { self.inspection.visit(self, $0) }
     }
     
 }

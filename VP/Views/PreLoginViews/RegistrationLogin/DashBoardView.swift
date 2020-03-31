@@ -29,7 +29,9 @@ struct DashBoardView: View {
                 .padding([.leading, .trailing], 44)
                 .padding(.bottom, 100)
                 
-                Button(action: {})
+                Button(action: {
+                    self.loginRegistrationState.state = .login
+                })
                 {
                     Text("registration_go_to_login")
                         .font(.custom("ClanPro-Medium", size: 17))
