@@ -12,6 +12,7 @@ enum TypeRootView {
     case launchview
     case onboarding
     case registrationLogin
+    case homeView
 }
 
 final internal class RootViewsType: ObservableObject {
@@ -31,8 +32,12 @@ struct AppRootView: View {
             } else if rootViewType.typeRootView == .onboarding {
                 OnboardingView()
             } else if rootViewType.typeRootView == .registrationLogin {
-                RegistrationLoginView(loginRegistrationState: .init(state: rootViewType.tabState))
-                    .edgesIgnoringSafeArea(.all)
+                RegistrationLoginView(
+                    loginRegistrationState: .init(state: rootViewType.tabState)
+                )
+                .edgesIgnoringSafeArea(.all)
+            } else if rootViewType.typeRootView == .homeView {
+                HomeView()
             }
         }
     }

@@ -71,6 +71,9 @@
 		F4E930F823B381D100CA9644 /* FloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E930F723B381D100CA9644 /* FloatingLabelTextField.swift */; };
 		F4F36F7223B4B28D002BEC7D /* CustomModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F36F7123B4B28D002BEC7D /* CustomModifier.swift */; };
 		F4FA670C23EC056800749ADF /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA670B23EC056800749ADF /* DashBoardView.swift */; };
+		F4FC96C7243728040001A11E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC96C6243728040001A11E /* HomeView.swift */; };
+		F4FC96CA243729DA0001A11E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC96C9243729DA0001A11E /* StorageManager.swift */; };
+		F4FC96CD24372DD90001A11E /* StorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC96CC24372DD90001A11E /* StorageTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +164,9 @@
 		F4E930F723B381D100CA9644 /* FloatingLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabelTextField.swift; sourceTree = "<group>"; };
 		F4F36F7123B4B28D002BEC7D /* CustomModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifier.swift; sourceTree = "<group>"; };
 		F4FA670B23EC056800749ADF /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
+		F4FC96C6243728040001A11E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F4FC96C9243729DA0001A11E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		F4FC96CC24372DD90001A11E /* StorageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +246,7 @@
 		F40ABDAF238FC1B60099E36A /* VPTests */ = {
 			isa = PBXGroup;
 			children = (
+				F4FC96CB24372C650001A11E /* CommonsTest */,
 				F4185C3F23FED04000717F85 /* TestHelpers  */,
 				F4E8402B23FD6704002C56D5 /* MockedData */,
 				F4185C3A23FEC61F00717F85 /* UI */,
@@ -297,6 +304,7 @@
 		F40ABDCB238FCB440099E36A /* PreLoginViews */ = {
 			isa = PBXGroup;
 			children = (
+				F4FC96C5243727C80001A11E /* Home */,
 				F49DB72A2396954900AB0AFD /* RegistrationLogin */,
 				F49DB729239691B800AB0AFD /* LaunchViews */,
 				F49961332395538A009BA613 /* OnboardingViews */,
@@ -317,6 +325,7 @@
 			children = (
 				F40ABDD7238FDD6C0099E36A /* Constants.swift */,
 				F4996134239559FE009BA613 /* AppRootView.swift */,
+				F4FC96C9243729DA0001A11E /* StorageManager.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -455,6 +464,22 @@
 				F4A3654B23C3347700E498CC /* BorderedViewModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		F4FC96C5243727C80001A11E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F4FC96C6243728040001A11E /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F4FC96CB24372C650001A11E /* CommonsTest */ = {
+			isa = PBXGroup;
+			children = (
+				F4FC96CC24372DD90001A11E /* StorageTest.swift */,
+			);
+			path = CommonsTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -623,6 +648,7 @@
 				F4F36F7223B4B28D002BEC7D /* CustomModifier.swift in Sources */,
 				F4996135239559FE009BA613 /* AppRootView.swift in Sources */,
 				F4E930F323B362CB00CA9644 /* View+Custom.swift in Sources */,
+				F4FC96C7243728040001A11E /* HomeView.swift in Sources */,
 				F40ABD9A238FC1B50099E36A /* AppDelegate.swift in Sources */,
 				F4643C6823ED583100B4D1AB /* NetworkManager.swift in Sources */,
 				F41A27EF23BA1CC70014D9D3 /* TabSwitchView.swift in Sources */,
@@ -633,6 +659,7 @@
 				F40ABDD2238FD0350099E36A /* ColorHelper.swift in Sources */,
 				F4E930F523B3636C00CA9644 /* RoundedCorner.swift in Sources */,
 				F41A27ED23BA132E0014D9D3 /* ButtonModifier.swift in Sources */,
+				F4FC96CA243729DA0001A11E /* StorageManager.swift in Sources */,
 				F4A3654C23C3347700E498CC /* BorderedViewModifier.swift in Sources */,
 				F49DB7282396882A00AB0AFD /* RegisterView.swift in Sources */,
 				F4772C1D23CC9C320088E9D8 /* PickerListView.swift in Sources */,
@@ -657,6 +684,7 @@
 				F47CEBAF23BF303D00E9E5B8 /* VPRoundedCornerTests.swift in Sources */,
 				F40ABDD4238FD23C0099E36A /* VPColorHelperTest.swift in Sources */,
 				F4185C4123FED05700717F85 /* TestHelpers.swift in Sources */,
+				F4FC96CD24372DD90001A11E /* StorageTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
