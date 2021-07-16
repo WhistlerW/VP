@@ -20,7 +20,10 @@ struct Constants {
         public static let baseURL = "https://api.mojskrbnik.com"
         public static let termsAndCondition = "http://www.mojskrbnik.com/terms-and-conditions"
         public static let privacyPolicy = "http://www.mojskrbnik.com/privacypolicy"
-        public static let login = baseURL + "/user-service/oauth/token?platform=mobile"
+        
+        // MARK: user-service
+        public static let login = baseURL + "/user-service/oauth/token"
+        public static let registration = baseURL + "/user-service/clients"
     }
     
     struct Authorization {

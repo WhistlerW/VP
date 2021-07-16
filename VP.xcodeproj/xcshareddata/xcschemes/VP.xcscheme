@@ -20,6 +20,34 @@
                ReferencedContainer = "container:VP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F40ABDAB238FC1B60099E36A"
+               BuildableName = "VPTests.xctest"
+               BlueprintName = "VPTests"
+               ReferencedContainer = "container:VP.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F40ABDB6238FC1B60099E36A"
+               BuildableName = "VPUITests.xctest"
+               BlueprintName = "VPUITests"
+               ReferencedContainer = "container:VP.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

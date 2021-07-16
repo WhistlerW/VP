@@ -37,7 +37,8 @@ struct AppRootView: View {
                 )
                 .edgesIgnoringSafeArea(.all)
             } else if rootViewType.typeRootView == .homeView {
-                HomeView()
+                let dataModel = ChartDataModel(dataModel: sample)
+                HomeView(dataModel: dataModel)
             }
         }
     }

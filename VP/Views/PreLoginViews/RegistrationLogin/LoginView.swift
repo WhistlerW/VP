@@ -10,6 +10,7 @@ import SwiftUI
 import AuthenticationServices
 
 class LoginDataItem: ObservableObject, PNetworkManagerRequestParser {
+    
     @Published var email: String = ""
     @Published var password: String = ""
     
@@ -43,6 +44,8 @@ struct LoginResponse: Codable {
 
 struct LoginView: View {
     
+    @EnvironmentObject private var rootViewType: RootViewsType
+    
     @ObservedObject var item: LoginDataItem = LoginDataItem()
     @ObservedObject var loginRegistrationState: RegistrationLoginStateObservedObject
     
@@ -58,12 +61,22 @@ struct LoginView: View {
     let inspection = Inspection<Self>()
     
     func callService() {
+        
+        var loginURL = URLComponents(string: Constants.API.login)
+        
+        loginURL?.queryItems = [
+            URLQueryItem(name: "platform", value: "mobile")
+        ]
+    
         self.networkManager.request(
-            url: Constants.API.login,
+            url: loginURL?.url?.absoluteString ?? "",
             inputData: self.item.self ,
-            method: .post, success: { (model: LoginResponse?) in
+            method: .post, success: {(model: LoginResponse?) in
                 if let md = model {
                     self.loginResponse = md
+                    DispatchQueue.main.async {
+                        self.rootViewType.typeRootView = .homeView
+                    }
                 }
         }, error: { error in
             if let err = error {

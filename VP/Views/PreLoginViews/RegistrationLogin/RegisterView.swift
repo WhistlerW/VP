@@ -8,15 +8,41 @@
 
 import SwiftUI
 
-class RegisterDataItem: ObservableObject {
+class RegisterDataItem: ObservableObject, PNetworkManagerRequestParser {
+
     @Published var firstName: String = ""
     @Published var lastName: String = ""
     @Published var country: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
+    
+    var headers: HTTPHeaders? {
+        return [
+            "Content-Type" : "application/json",
+            "Accept" : "application/json"
+        ]
+    }
+    
+    var params: Parameters? {
+        return [
+            "firstName": firstName,
+            "lastName": lastName,
+            "countryISOAlpha2": country,
+            "email": email,
+            "password": password
+        ]
+    }
+    
+}
+
+struct RegisterResponse: Codable {
+    var id: String = ""
+    var email: String = ""
+    var phone: String?
 }
 
 struct RegisterView: View {
+    
     @ObservedObject var item: RegisterDataItem = RegisterDataItem()
     @ObservedObject var loginRegistrationState: RegistrationLoginStateObservedObject
     
@@ -27,6 +53,14 @@ struct RegisterView: View {
     @State var passwordValid = FieldChecker()
     @State var isCheckedTerms = false
     @State var isCheckedPolicy = false
+    
+    var networkManager = NetworkManager()
+    let inspection = Inspection<Self>()
+    
+    @State  var showingMessage = false
+    @State  var error = ErrorMessage()
+    
+    @State var registerResponse = RegisterResponse()
     
     var body: some View {
         
@@ -42,6 +76,25 @@ struct RegisterView: View {
         },
             set: { print($0) }
         )
+        
+        func callService() {
+            self.networkManager.request(
+                url: Constants.API.registration,
+                inputData: self.item.self ,
+                method: .post, success: {(model: RegisterResponse?) in
+                    if let md = model {
+                        self.registerResponse = md
+                        DispatchQueue.main.async {
+                            self.loginRegistrationState.state = .dashboard
+                        }
+                    }
+            }, error: { error in
+                if let err = error {
+                    self.error = err
+                    self.showingMessage = true
+                }
+            })
+        }
         
         return VStack(spacing: 0) {
             VStack(spacing: 0) {
@@ -148,7 +201,7 @@ struct RegisterView: View {
             
             if validation.wrappedValue {
                 Button(action: {
-                    self.loginRegistrationState.state = .dashboard
+                    callService()
                 }) {
                     Text("action_next")
                         .font(.custom("ClanPro-Medium", size: 14))
@@ -181,6 +234,14 @@ struct RegisterView: View {
                 }.padding(.top, 30)
             }
         }
+        .alert(isPresented: self.$showingMessage) { () -> Alert in
+            Alert(
+                title: Text(LocalizedStringKey(stringLiteral: error.title)),
+                message: Text(LocalizedStringKey(stringLiteral: error.message)),
+                dismissButton: .default(Text(LocalizedStringKey(stringLiteral: "lbl_ok")))
+            )
+        }
+        .onReceive(inspection.notice) { self.inspection.visit(self, $0) }
     }
 }
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F4054A2E242B58DF0019FC9A /* Reqres in Frameworks */ = {isa = PBXBuildFile; productRef = F4054A2D242B58DF0019FC9A /* Reqres */; };
 		F406A6C323FC342A008A0B9A /* VPLoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406A6C223FC342A008A0B9A /* VPLoginViewTests.swift */; };
+		F408A70625DFE69A00DCF1E2 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F408A70525DFE69A00DCF1E2 /* PieChart.swift */; };
 		F40ABD9A238FC1B50099E36A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ABD99238FC1B50099E36A /* AppDelegate.swift */; };
 		F40ABD9C238FC1B50099E36A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ABD9B238FC1B50099E36A /* SceneDelegate.swift */; };
 		F40ABDA0238FC1B60099E36A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40ABD9F238FC1B60099E36A /* Assets.xcassets */; };
@@ -95,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		F406A6C223FC342A008A0B9A /* VPLoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPLoginViewTests.swift; sourceTree = "<group>"; };
+		F408A70525DFE69A00DCF1E2 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		F40ABD96238FC1B50099E36A /* VP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40ABD99238FC1B50099E36A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F40ABD9B238FC1B50099E36A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -304,7 +306,6 @@
 		F40ABDCB238FCB440099E36A /* PreLoginViews */ = {
 			isa = PBXGroup;
 			children = (
-				F4FC96C5243727C80001A11E /* Home */,
 				F49DB72A2396954900AB0AFD /* RegistrationLogin */,
 				F49DB729239691B800AB0AFD /* LaunchViews */,
 				F49961332395538A009BA613 /* OnboardingViews */,
@@ -355,6 +356,7 @@
 				F429B1E423C477DE00536C01 /* CheckBoxLabelView.swift */,
 				F4772C1C23CC9C320088E9D8 /* PickerListView.swift */,
 				F43F5A8C23CF368100E993A4 /* PagingView.swift */,
+				F408A70525DFE69A00DCF1E2 /* PieChart.swift */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -396,6 +398,7 @@
 		F482A7BA23CDAC7800D8F678 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F4FC96C5243727C80001A11E /* Home */,
 				F40ABDCB238FCB440099E36A /* PreLoginViews */,
 			);
 			path = Views;
@@ -636,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F40ABDDA238FF0130099E36A /* VideoView.swift in Sources */,
+				F408A70625DFE69A00DCF1E2 /* PieChart.swift in Sources */,
 				F499613223954D96009BA613 /* LoginView.swift in Sources */,
 				F40ABDD8238FDD6C0099E36A /* Constants.swift in Sources */,
 				F4799CD423EB025F006BC5C4 /* ResetPasswordView.swift in Sources */,
@@ -898,7 +902,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development: demir.kovacevic@abc-techgroup.com (7S3P6C33N6)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = H6P9H397J7;
 				INFOPLIST_FILE = VPTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -908,6 +915,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vezovisek.partneri.VPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VP.app/VP";
@@ -919,7 +928,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ABC Software Development d.o.o.";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5Z6QV8Q7NA;
 				INFOPLIST_FILE = VPTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -928,7 +940,10 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vezovisek.partneri.VPTests;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VP.app/VP";
@@ -939,7 +954,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development: demir.kovacevic@abc-techgroup.com (7S3P6C33N6)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VPUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -948,8 +966,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vezovisek.partneri.VPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "";
 				TEST_TARGET_NAME = VP;
 			};
 			name = Debug;
@@ -958,7 +979,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ABC Software Development d.o.o.";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5Z6QV8Q7NA;
 				INFOPLIST_FILE = VPUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -966,9 +989,13 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vezovisek.partneri.VPUITests;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "";
 				TEST_TARGET_NAME = VP;
 			};
 			name = Release;

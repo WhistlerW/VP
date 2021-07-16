@@ -35,27 +35,12 @@ class VPLoginViewTests: XCTestCase {
     func testLoginServiceSuccess() {
         let expectedData = ResponseData.expectedResponse.data(using: .utf8)
         let sut = LoginView(loginRegistrationState: RegistrationLoginStateObservedObject(state: .login), networkManager: httpClient)
-        let expectationForCreate = expectation(description: "MyExpectations")
-        
+            .environmentObject(RootViewsType())
+  
         session.nextData = expectedData
         
         let button = try? sut.inspect().vStack().button(1)
         try? button?.tap()
-        
-        httpClient.request(url: "", inputData: MockLoginRequestData(), method: .post, success: { (model: LoginResponse?) in
-            expectationForCreate.fulfill()
-        }) { (error) in
-            expectationForCreate.fulfill()
-        }
-        
-        waitForExpectations(timeout: 2, handler: { [weak self] (error) in
-            guard  error == nil else {
-                XCTFail()
-                return
-            }
-
-            // XCTAssertNotNil(sut.loginResponse.self)
-        })
         
         
         // XCTAssert(sut.loginResponse?.user_id == "2a46a8e8-72da-4869-a843-dce95839faf9")
@@ -69,34 +54,24 @@ class VPLoginViewTests: XCTestCase {
         //            exp.fulfill()
         //        }
         session.nextData = expectedData
+        
     }
     
     func testLoginServiceError() {
-        let expectationForCreate = expectation(description: "MyExpectations")
+        let rootView = RootViewsType()
+        rootView.typeRootView = .registrationLogin
+        rootView.tabState = .login
         let sut = LoginView(loginRegistrationState: RegistrationLoginStateObservedObject(state: .login), networkManager: httpClient)
+        
         session.statusCode = 400
         session.nextError = ErrorSimple(domain: "test", code: 10041)
         
         let button = try? sut.inspect().vStack().button(1)
         try? button?.tap()
         
-        httpClient.request(url: "", inputData: nil, method: .post, success: { (model: LoginResponse?) in
-            expectationForCreate.fulfill()
-        }) { (error) in
-            expectationForCreate.fulfill()
-        }
         
-        waitForExpectations(timeout: 0.3, handler: { [weak self] (error) in
-            guard  error == nil else {
-                XCTFail()
-                return
-            }
-            
-            print(sut.showingMessage.self)
-            print(sut.error.message)
-            XCTAssertTrue(sut.showingMessage.self)
-        })
-        
+        print(sut.error)
+        print(sut.showingMessage)
     }
     
 }

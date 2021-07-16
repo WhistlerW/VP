@@ -30,7 +30,7 @@ struct LineSpacerModifier: ViewModifier {
         content
             .frame(height: 0.3)
             .padding(.leading, 15)
-            .foregroundColor(Color.gray)
+            .foregroundColor(Color.gray.opacity(0.4))
             .opacity(0.8)
     }
     
